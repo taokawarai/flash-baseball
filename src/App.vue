@@ -7,7 +7,7 @@
       <template v-slot:text>
         <div style="height: 40vh; display: flex; justify-content: center; align-items: center; background-color: #FFFFAA;">
           <div v-if="countdown > 0" style="font-size: 5em;">{{ countdown }}</div>
-          <v-img v-if="showImage" :src="staticImage" aspect-ratio="3"></v-img>
+          <v-img v-if="showImage" :src="staticImage" :style="{ height: '80%' }"></v-img>
           <div v-if="showInputForm" style="font-size: 3em;">背番号の合計は？</div>
           <div v-if="showMessage" style="font-size: 3em;">{{ message }}</div>
         </div>
@@ -153,9 +153,8 @@ export default {
     selectRandomImages() {
       this.selectedImages = [];
       let imagesCopy = [...this.images];
-      for (let i = 0; i < 5; i++) {
+      while (this.selectedImages.length < 5 && imagesCopy.length > 0) {
         const randomIndex = Math.floor(Math.random() * imagesCopy.length);
-        // console.log(randomIndex);
         this.selectedImages.push(imagesCopy.splice(randomIndex, 1)[0]);
       }
       // console.log(this.selectedImages);
