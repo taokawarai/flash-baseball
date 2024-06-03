@@ -2,10 +2,10 @@
   <div id="app">
     <v-card style="height: 80%; min-width: 95vw;">
       <template v-slot:title>
-        <h1>フラッシュ背番号暗算</h1>
+        <h2>フラッシュ背番号暗算</h2>
       </template>
       <template v-slot:text>
-        <div style="height: 50vh; display: flex; justify-content: center; align-items: center; background-color: #FFFFAA;">
+        <div style="height: 40vh; display: flex; justify-content: center; align-items: center; background-color: #FFFFAA;">
           <div v-if="countdown > 0" style="font-size: 5em;">{{ countdown }}</div>
           <v-img v-if="showImage" :src="staticImage" aspect-ratio="3"></v-img>
           <div v-if="showInputForm" style="font-size: 3em;">背番号の合計は？</div>
@@ -16,20 +16,18 @@
             カンニング
           </a>
         </div>
-        <v-btn v-if="showStartButton" color="primary" @click="startGame" style="margin-top: 2rem;">スタート</v-btn>
+        <v-btn v-if="showStartButton" color="primary" @click="startGame" style="margin-top: 1rem;">スタート</v-btn>
         <div>
-          <input v-if="showInputForm" style="height: 40px; border: 1.5px solid darkgray; margin-top: 2rem; border-radius: 5px;"  type="number" inputmode="numeric" v-model="inputValue"/>
+          <input v-if="showInputForm" style="height: 40px; border: 1.5px solid darkgray; margin-top: 1rem; border-radius: 5px;"  type="number" inputmode="numeric" v-model="inputValue"/>
           <v-btn v-if="showInputForm" :disabled="inputValue === ''" color="primary" @click="answer">回答</v-btn>
         </div>
-        <v-btn v-if="showMessage" color="primary" @click="retry" style="margin-top: 2rem;">もう一回</v-btn>
+        <v-btn v-if="showMessage" color="primary" @click="retry" style="margin-top: 1rem;">もう一回</v-btn>
       </template>
     </v-card>
   </div>
 </template>
 
 <script>
-import { aliases, mdi } from 'vuetify/iconsets/mdi'
-
 export default {
   name: 'App',
   components: {
@@ -195,10 +193,10 @@ export default {
   margin: 0;
   padding: 0;
   /* 背景画像のURLを設定 */
-  background-image: url('bg.jpg');
+  /* background-image: url('bg.jpg'); */
   /* 画像の表示サイズや位置、繰り返しの設定など */
-  background-size: cover;
+  /* background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 </style>
