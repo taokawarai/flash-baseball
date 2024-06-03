@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <v-card style="height: 80%; width: 50vw; min-width: 400px">
+    <v-card style="height: 80%; width: 50vw; min-width: 300px">
       <template v-slot:title>
         フラッシュ背番号暗算
       </template>
       <template v-slot:text>
-        <div style="height: 50vh; display: flex; justify-content: center; align-items: center; background-color: grey;">
+        <div style="height: 50vh; display: flex; justify-content: center; align-items: center; background-color: #FFFFAA;">
           <div v-if="countdown > 0" style="font-size: 5em;">{{ countdown }}</div>
-          <v-img v-if="showImage" :src="staticImage" aspect-ratio="2"></v-img>
+          <v-img v-if="showImage" :src="staticImage" aspect-ratio="1.5"></v-img>
           <div v-if="showInputForm" style="font-size: 3em;">背番号の合計は？</div>
           <div v-if="showMessage" style="font-size: 3em;">{{ message }}</div>
         </div>
@@ -181,8 +181,15 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   display: flex;
-  height: 100vh;
+  height: 100svh;
+  width: 100%;
   /* justify-content: center; */
   align-items: center;
+  /* 背景画像のURLを設定 */
+  background-image: url('bg.jpg');
+  /* 画像の表示サイズや位置、繰り返しの設定など */
+  background-size: cover; /* 画像を容器に合わせて表示 */
+  background-position: center; /* 画像を中央に配置 */
+  background-repeat: no-repeat; /* 画像の繰り返し表示を無効化 */
 }
 </style>
