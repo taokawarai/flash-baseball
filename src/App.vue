@@ -18,7 +18,7 @@
         </div>
         <v-btn v-if="showStartButton" color="primary" @click="startGame" style="margin-top: 1rem;">スタート</v-btn>
         <div>
-          <input v-if="showInputForm" style="height: 40px; border: 1.5px solid darkgray; margin-top: 1rem; border-radius: 5px;"  type="number" inputmode="numeric" v-model="inputValue"/>
+          <input v-if="showInputForm" style="font-size: 16px; height: 40px; border: 1.5px solid darkgray; margin-top: 1rem; border-radius: 5px;" type="number" inputmode="numeric" v-model="inputValue"/>
           <v-btn v-if="showInputForm" :disabled="inputValue === ''" color="primary" @click="answer">回答</v-btn>
         </div>
         <v-btn v-if="showMessage" color="primary" @click="retry" style="margin-top: 1rem;">もう一回</v-btn>
