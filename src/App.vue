@@ -114,6 +114,18 @@ export default {
     };
   },
   mounted() {
+    // JSONファイルをフェッチして、画像をプリロード
+    fetch("/imageList.json")
+      .then(response => response.json())
+      .then(images => {
+        images.forEach(src => {
+          const img = new Image();
+          img.src = src;
+        });
+      })
+      .catch(error => {
+        console.error("Error loading images:", error);
+      });
     this.inputValue = '';
   },
   methods: {
