@@ -48,6 +48,9 @@ export default {
       ],
     };
   },
+  mounted() {
+    this.inputValue = '';
+  },
   methods: {
     answer() {
       this.showInputForm = false;
@@ -56,6 +59,7 @@ export default {
       } else {
         this.message = `残念！正解は${this.total}です！`;
       }
+      this.inputValue = '';
       this.showMessage = true;
     },
     retry(){
